@@ -52,12 +52,13 @@ O aplicativo estará disponível em: http://localhost:5173
 
 JS-Async-vite--ExchangeRate/  
 ├── src/  
-│   ├── img/  
-│   ├── styles/  
-│   │   └── style.css  
-│   ├── utils/  
-│   │   └── rates.js  
-│   └── index.html  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── img/  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── image.png  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── styles/  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── style.css  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── utils/  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── rates.js  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── index.html  
 ├── package.json  
 ├── package-lock.json  
 └── README.md  
