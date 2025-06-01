@@ -1,6 +1,7 @@
 ## Conversor de Moedas - Casa de Câmbio Digital
 ---
 Interface:
+
 <img src="src/img/image.png"></img>
 
 ---
@@ -49,16 +50,17 @@ O aplicativo estará disponível em: http://localhost:5173
 ---
 # Estrutura do Projeto
 
-JS-Async-vite--ExchangeRate/
-├── src/
-│   ├── img/
-│   ├── styles/
-│   │   └── style.css
-│   ├── utils/
-│   │   └── rates.js
-│   └── index.html
-├── package.json
-└── README.md
+JS-Async-vite--ExchangeRate/  
+├── src/  
+│   ├── img/  
+│   ├── styles/  
+│   │   └── style.css  
+│   ├── utils/  
+│   │   └── rates.js  
+│   └── index.html  
+├── package.json  
+├── package-lock.json  
+└── README.md  
 
 ---
 # Contatos
