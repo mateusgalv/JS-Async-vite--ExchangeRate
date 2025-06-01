@@ -1,18 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #222831;
+    border: 0px;
+}
+
 .main-container {
     min-width: 300px;
-    max-width: 1200px;
-    background-color: red;
-}
-
-.container {
-    display: flex;
-    border: 1px solid black;
-    flex-direction: column;
-    max-width: 90%;
-    align-items: center;
+    max-width: 600px;
+    width: 95%;
     margin: 0 auto;
+    padding: 5px;
 }
 
-.table {
-    border: 1px solid black;
+.header {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.user-options {
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #393E46;
+    border-radius: 5px;
+}
+
+#currency-dropdown {
+    width: 70px;
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+#fetch {
+    margin: 10px;
+    width: 60px;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.table-container {
+    width: 99%;
+    margin: 5px auto;
+}
+
+#table {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-data {
+    width: 33%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+}
+
+.currency-element {
+    width: 45px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: blue; */
+}
+
+.rate-element {
+    width: 100px;
+    height: 25px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
 }

@@ -24,10 +24,14 @@ const createTableElement = (currency, rate) => {
     const currentRow = table.lastElementChild;
 
     const data = document.createElement("td");
+    data.classList.add("table-data");
+
     const currencyElement = document.createElement("div");
-    const rateElement = document.createElement("div");
-    
+    currencyElement.classList.add("currency-element");
     currencyElement.innerText = currency;
+
+    const rateElement = document.createElement("div");
+    rateElement.classList.add("rate-element");
     rateElement.innerText = rate;
     
     data.appendChild(currencyElement);
@@ -46,7 +50,7 @@ const createTable = (rates, currencies) => {
         if(index === 0 || index%3 === 0) {
             createTableRow();
         }
-        const currentRate = rates[`${currency}`].toFixed(2);
+        const currentRate = rates[`${currency}`].toFixed(4);
         createTableElement(currency, currentRate);
     });
 }
