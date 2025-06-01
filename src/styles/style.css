@@ -1,0 +1,14 @@
+.main-container {
+    min-width: 300px;
+    max-width: 1200px;
+    background-color: red;
+}
+
+.container {
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    max-width: 90%;
+    align-items: center;
+    margin: 0 auto;
+}
