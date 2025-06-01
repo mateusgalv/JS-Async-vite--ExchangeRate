@@ -1,6 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    color: white;
+    background-color: #222831;
+    border: 0px;
 }
 
 .main-container {
@@ -9,18 +12,46 @@
     width: 95%;
     margin: 0 auto;
     padding: 5px;
-    
-    background-color: red;
+}
+
+.header {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.user-options {
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #393E46;
+    border-radius: 5px;
+}
+
+#currency-dropdown {
+    width: 70px;
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+#fetch {
+    margin: 10px;
+    width: 60px;
+    border-radius: 5px;
+    height: 25px;
 }
 
 .table-container {
     width: 99%;
     margin: 5px auto;
-    background-color: green;
 }
 
 #table {
-    border: 1px solid black;
     width: 100%;
 }
 
@@ -31,25 +62,30 @@
 
 .table-data {
     width: 33%;
+    height: 35px;
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
 
-    border: 1px solid grey;
-    background-color: yellow;
 }
 
 .currency-element {
-    margin-left: 15px;
-    margin-right: 25px;
+    width: 45px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: blue; */
 }
 
 .rate-element {
+    width: 100px;
+    height: 25px;
     background-color: white;
     border-radius: 5px;
-    width: 80%;
-    margin: 0 5px 0 0;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 40px;
-    overflow: hidden
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
