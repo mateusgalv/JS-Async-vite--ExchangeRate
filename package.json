@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite --open",
+    "start": "vite --open",
     "lint": "eslint ./src"
   },
   "repository": {

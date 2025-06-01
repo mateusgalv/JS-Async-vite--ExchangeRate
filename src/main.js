@@ -50,7 +50,7 @@ const createTable = (rates, currencies) => {
         if(index === 0 || index%3 === 0) {
             createTableRow();
         }
-        const currentRate = rates[`${currency}`].toFixed(2);
+        const currentRate = rates[`${currency}`].toFixed(4);
         createTableElement(currency, currentRate);
     });
 }
