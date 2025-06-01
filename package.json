@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mateusgalv/NPM--JS-Async.git"
+    "url": "git+https://github.com/mateusgalv/JS-Async-vite--ExchangeRate.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mateusgalv/NPM--JS-Async/issues"
+    "url": "https://github.com/mateusgalv/JS-Async-vite--ExchangeRate/issues"
   },
-  "homepage": "https://github.com/mateusgalv/NPM--JS-Async#readme",
+  "homepage": "https://github.com/mateusgalv/JS-Async-vite--ExchangeRate#readme",
   "dependencies": {
     "vite": "^6.3.5"
   },
