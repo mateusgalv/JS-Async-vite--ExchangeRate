@@ -1,8 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: white;
-    background-color: #222831;
     border: 0px;
 }
 
@@ -28,8 +26,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #393E46;
     border-radius: 5px;
+    
+    
+    background-color: #393E46;
 }
 
 #currency-dropdown {
@@ -74,8 +74,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* background-color: blue; */
 }
 
 .rate-element {
@@ -88,4 +86,13 @@
     justify-content: center;
     align-items: center;
     color: black;
+}
+
+.light {
+    background-color: white;
+}
+
+.dark {
+    background-color: #222831;
+    color: white;
 }
