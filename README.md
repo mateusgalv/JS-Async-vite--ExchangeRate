@@ -45,7 +45,7 @@ npm install
 npm start
 ```
 
-O aplicativo estará disponível em: http://localhost:5173
+O aplicativo estará disponível em: http://localhost:4173
 
 ---
 # Estrutura do Projeto

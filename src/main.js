@@ -5,7 +5,7 @@ const dropdown = document.getElementById("currency-dropdown");
 const applyNewCurrency = document.getElementById("fetch");
 const tableContainer = document.getElementById("table-container");
 const body = document.getElementById("main");
-const mode = document.getElementById("mode");
+const modeSelector = document.getElementById("mode-selector");
 
 
 const setDropDownOptions = (currencies) => {
@@ -63,6 +63,26 @@ const removeTable = () => {
     currentTable.remove();
 }
 
+const checkCurrMode = () => body.className;
+
+const switchElementMode = (element) => {
+    const currElmentClasses = element.classList()
+    const currMode = checkCurrMode();
+
+    const newClasses = currElmentClasses.map((elementClass) => {
+        if (elementClass !== currMode) {
+            return elementClass;
+        }
+    });
+
+    currMode === 'dark' ? newClasses.push('light') : newClasses.push('dark');
+
+    newClasses.forEach((newClass) => {
+        element.classList.add(newClass);
+    });
+}
+
+
 applyNewCurrency.addEventListener("click", async () => {
     const rates = await getRates(dropdown.value);
     const currencies = Object.keys(rates);
@@ -72,8 +92,7 @@ applyNewCurrency.addEventListener("click", async () => {
     createTable(rates, currencies);
 });
 
-// body.classList.remove(class);
-mode.addEventListener('click', () => {
+modeSelector.addEventListener('click', () => {
     const currentMode = body.className;
     body.className = "";
 
