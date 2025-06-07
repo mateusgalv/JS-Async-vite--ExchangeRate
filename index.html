@@ -5,29 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Async</title>
 </head>
-<body id="main" class="dark">
-    <div>
+<header>
+    <nav>
         <div id="theme-toggle"></div>
+    </nav>
+</header>
+<body id="body" class="dark">
+    <div id="title" class="titles-container">
+        <h1>Casa de Câmbio</h1>
+        <p>Exchange house</p>
     </div>
     <main class="main-container">
-        <div class="header">
-            <h1>Casa de Câmbio</h1>
-            <p>Exchange house</p>
+        <div class="inputs-container">
             <nav id="nav" class="user-options">
-                <div>
+                <div id="currency-option" class="option-container">
                     <select type="text" id="currency-dropdown" placeholder="BRL"></select>
                     <button id="apply-btn">Apply</button>
                 </div>
-                <div>
-                    <input id="fav-toggle" type="checkbox"/>
-                    <span>Favoritos</span>
+                <div id="favorite-option" class="option-container">
+                    <input id="fav-toggle" type="checkbox" />
+                    <label for="fav-toggle">Mostrar favoritos</label>
                 </div>
             </nav>
+            <div id="info" class="info-container">
+                <p>Texto</p>
+            </div>
+        </div>
+        <div>
             <div id="currency-container" class="currency-container dark">
                 <span id="currency"></span>
             </div>
+            <div id="table-container" class="table-container">
+            </div>
         </div>
-        <div id="table-container" class="table-container"></div>
     </main>
     <script type="module" src="./src/main.js"></script>
 </body>

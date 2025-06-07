@@ -1,7 +1,7 @@
 import "./styles/style.css";
 import { getRates } from "./utils/rates.js";
 
-const body = document.getElementById("main");
+const body = document.getElementById("body");
 const dropdown = document.getElementById("currency-dropdown");
 const tableContainer = document.getElementById("table-container");
 const currencyContainer = document.getElementById("currency-container");
