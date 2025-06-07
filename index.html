@@ -6,16 +6,25 @@
     <title>JavaScript Async</title>
 </head>
 <body id="main" class="dark">
-    <header>
-        <div id="mode-selector"></div>
-    </header>
+    <div>
+        <div id="theme-toggle"></div>
+    </div>
     <main class="main-container">
         <div class="header">
             <h1>Casa de Câmbio</h1>
             <p>Exchange house</p>
-            <div class="user-options">
-                <select type="text" id="currency-dropdown" placeholder="BRL"></select>
-                <button id="fetch">Apply</button>
+            <nav id="nav" class="user-options">
+                <div>
+                    <select type="text" id="currency-dropdown" placeholder="BRL"></select>
+                    <button id="apply-btn">Apply</button>
+                </div>
+                <div>
+                    <input id="fav-toggle" type="checkbox"/>
+                    <span>Favoritos</span>
+                </div>
+            </nav>
+            <div id="currency-container" class="currency-container dark">
+                <span id="currency"></span>
             </div>
         </div>
         <div id="table-container" class="table-container"></div>

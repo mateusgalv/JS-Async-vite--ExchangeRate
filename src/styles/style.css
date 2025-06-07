@@ -4,8 +4,18 @@
     border: 0px;
 }
 
+body.light {
+    background-color: white;
+    color: black;
+}
+
+body.dark {
+    background-color: #222831;
+    color: white;
+}
+
 .main-container {
-    min-width: 300px;
+    min-width: 500px;
     max-width: 600px;
     width: 95%;
     margin: 0 auto;
@@ -20,13 +30,38 @@
 }
 
 .user-options {
-    margin: 10px;
-    width: 50%;
+    margin: 5px 10px;
     height: 50px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.user-options.light {
+    border: 1px solid #948979;
+}
+
+.user-options.dark {
+    border: 1px solid #222831;
+}
+
+.currency-container {
+    width: 280px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+}
+
+.currency-container.light {
+    background-color: #DFD0B8;
+}
+
+.currency-container.dark {
+    background-color: #393E46;
 }
 
 #currency-dropdown {
@@ -36,20 +71,26 @@
     padding-left: 15px;
 }
 
-#fetch {
-    margin: 10px;
+#apply-btn {
     width: 60px;
     border-radius: 5px;
     height: 25px;
 }
 
 .table-container {
-    width: 99%;
-    margin: 5px auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #table {
-    width: 100%;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+#table.light {
+    background-color: #F2F2F2;
 }
 
 .row {
@@ -58,13 +99,21 @@
 }
 
 .table-data {
-    width: 33%;
     height: 40px;
+    min-width: 150px;
     display: flex;
     align-items: center;
-    border: 1px transparent black;
     border-radius: 5px;
-    margin: 1px
+    margin: 1px 2px;
+}
+
+.table-data.favorite.dark {
+    background-color: #563A9C;
+}
+
+.table-data.favorite.light {
+    background-color: yellow;
+    color: black;
 }
 
 .currency-element {
@@ -79,28 +128,18 @@
     width: 100px;
     height: 25px;
     background-color: white;
-    border: 1px solid #222831;
     border-radius: 5px;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
 }
 
-.light {
-    background-color: white;
-}
-
-.dark {
-    background-color: #222831;
-    color: white;
-}
-
-#mode-selector {
+#theme-toggle {
     width: 25px;
     height: 25px;
     position: absolute;
     right: 0;
     background-color: pink;
 }
+
