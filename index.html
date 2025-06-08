@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Async</title>
 </head>
-<header>
-    <nav>
-        <div id="theme-toggle"></div>
-    </nav>
+<header id="settings-bar" class="settings-options">
+    <div id="theme-toggle">Mudar tema</div>
 </header>
 <body id="body" class="dark">
     <div id="title" class="titles-container">
@@ -27,16 +25,17 @@
                     <label for="fav-toggle">Mostrar favoritos</label>
                 </div>
             </nav>
-            <div id="info" class="info-container">
-                <p>Texto</p>
-            </div>
         </div>
-        <div>
-            <div id="currency-container" class="currency-container dark">
+        <div id="info-container" class="info-container">
+            <div id="info" class="info-container">
+                <span>Selecione uma moeda para favoritar</span>
+            </div>
+            <div id="currency-container" class="currency-container">
                 <span id="currency"></span>
             </div>
-            <div id="table-container" class="table-container">
-            </div>
+        </div>
+        <div id="table-container" class="table-container">
+            <!-- Dinamic Table -->
         </div>
     </main>
     <script type="module" src="./src/main.js"></script>

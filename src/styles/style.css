@@ -5,16 +5,30 @@
 }
 
 header {
-    /* background-color: black; */
     width: 100%;
     height: 20px;
-    /* Nav */
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+header.light {
+    background-color: #DFD0B8;
+    color: white;
+}
+
+#theme-toggle {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    background-color: #021526;
+    border-radius: 2px;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    background-color: black;
+    max-width: 500px;
+    min-width: 500px;
+    margin: 0 auto;
 }
 
 body.light {
@@ -27,67 +41,75 @@ body.dark {
     color: white;
 }
 
-.main-container {
-    min-width: 500px;
-    max-width: 600px;
-    width: 95%;
-    margin: 0 auto;
-    padding: 5px;
+.titles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.header {
-    margin-top: 10px;
+.main-container {
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
+
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     align-items: center;
 }
 
 .user-options {
     margin: 5px 10px;
-    height: 50px;
     width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 5px;
 }
 
 .user-options.light {
-    border: 1px solid #948979;
+    background-color: #DFD0B8;
 }
 
 .user-options.dark {
     border: 1px solid #222831;
 }
 
+.info-container {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .currency-container {
     width: 280px;
     height: 25px;
+    border-radius: 5px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-}
-
-.currency-container.light {
-    background-color: #DFD0B8;
-}
-
-.currency-container.dark {
-    background-color: #393E46;
 }
 
 #currency-dropdown {
-    width: 70px;
+    width: 60px;
     height: 25px;
     border-radius: 5px;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
 #apply-btn {
     width: 60px;
-    border-radius: 5px;
     height: 25px;
+    border-radius: 5px;
+}
+
+.option-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.option-container > * {
+    margin: 0 4px;
 }
 
 .table-container {
@@ -99,7 +121,6 @@ body.dark {
 
 #table {
     padding: 0 5px;
-    border-radius: 5px;
 }
 
 #table.light {
@@ -146,21 +167,4 @@ body.dark {
     justify-content: center;
     align-items: center;
     color: black;
-}
-
-#theme-toggle {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    right: 0;
-    background-color: pink;
-}
-
-.option-container {
-    /* width: 100%; */
-    /* height: 100px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid red;
 }
