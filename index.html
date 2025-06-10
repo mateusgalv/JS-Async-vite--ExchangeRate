@@ -5,20 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Async</title>
 </head>
-<body id="main" class="dark">
-    <header>
-        <div id="mode-selector"></div>
-    </header>
+<header id="settings-bar" class="settings-options">
+    <div id="theme-toggle">Mudar tema</div>
+</header>
+<body id="body" class="dark">
+    <div id="title" class="titles-container">
+        <h1>Casa de Câmbio</h1>
+        <p>Exchange house</p>
+    </div>
     <main class="main-container">
-        <div class="header">
-            <h1>Casa de Câmbio</h1>
-            <p>Exchange house</p>
-            <div class="user-options">
-                <select type="text" id="currency-dropdown" placeholder="BRL"></select>
-                <button id="fetch">Apply</button>
+        <div class="inputs-container">
+            <nav id="nav" class="user-options">
+                <div id="currency-option" class="option-container">
+                    <select type="text" id="currency-dropdown" placeholder="BRL"></select>
+                    <button id="apply-btn">Apply</button>
+                </div>
+                <div id="favorite-option" class="option-container">
+                    <input id="fav-toggle" type="checkbox" />
+                    <label for="fav-toggle">Mostrar favoritos</label>
+                </div>
+            </nav>
+        </div>
+        <div id="info-container" class="info-container">
+            <div id="info" class="info-container">
+                <span>Selecione uma moeda para favoritar</span>
+            </div>
+            <div id="currency-container" class="currency-container">
+                <span id="currency"></span>
             </div>
         </div>
-        <div id="table-container" class="table-container"></div>
+        <div id="table-container" class="table-container">
+            <!-- Dinamic Table -->
+        </div>
     </main>
     <script type="module" src="./src/main.js"></script>
 </body>
