@@ -21,8 +21,13 @@ header.light {
     width: 100px;
     height: 20px;
     text-align: center;
-    background-color: #021526;
+    background-color: #222831;
     border-radius: 2px;
+}
+
+#theme-toggle.light {
+    background-color: #DFD0B8;
+    color: black;
 }
 
 body {

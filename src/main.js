@@ -1,5 +1,11 @@
 import "./styles/style.css";
-import { getRates } from "./utils/rates.js";
+import { getRates, getCurrencies } from "./utils/rates.js";
+import {
+    storeRates,
+    getStoredRates,
+    storeFavorites,
+    getStoredFavorites,
+} from "./utils/storage.js";
 
 const header = document.getElementById("settings-bar");
 const body = document.getElementById("body");
@@ -40,25 +46,24 @@ const createDiv = (className, value) => {
 }
 
 const createTableDataElement = (currency, rate, favorites) => {
-    const currentRow = table.lastElementChild;
-    console.log(favorites.includes(currency));
+    const lastRow = table.lastElementChild;
     
-    const data = document.createElement("td");
-    data.classList.add("table-data", currentTheme());  
-    data.addEventListener("click", () => data.classList.toggle("favorite"));
+    const tdElement = document.createElement("td");
+    tdElement.classList.add("table-data", currentTheme());  
+    tdElement.addEventListener("click", () => tdElement.classList.toggle("favorite"));
     
     const currencyElement = createDiv("currency-element", currency);
     const rateElement = createDiv("rate-element", rate);
 
     if(favorites.includes(currency)) {
-        data.classList.add("favorite")
+        tdElement.classList.add("favorite")
     }
     
-    data.appendChild(currencyElement);
-    data.appendChild(rateElement);
-    currentRow.appendChild(data);
+    tdElement.appendChild(currencyElement);
+    tdElement.appendChild(rateElement);
+    lastRow.appendChild(tdElement);
 
-    return data;
+    return tdElement;
 }
 
 const currentTheme = () => body.className;
@@ -87,6 +92,7 @@ const switchAllElementsTheme = () => {
     const allTableDataElements = document.getElementsByTagName("td");
     const allElements = [
         header,
+        themeToggle,
         userOptions,
         tableContainer,
         getTable(),
@@ -106,8 +112,8 @@ const displayFavCurrencies = () => {
 }
 
 const displayAllCurrencies = () => {
-    const rates = JSON.parse(sessionStorage.getItem("rates"));
-    const currencies = Object.keys(rates);
+    const rates = getStoredRates();
+    const currencies = getCurrencies(rates);
     const favorites = getFavoriteElements();
 
     removeTable();
@@ -122,22 +128,23 @@ const displayAllCurrencies = () => {
     });
 }
 
-const storeFavorites = () => {
+const getFavorites = () => {
     const favoriteElements = getFavoriteElements();
 
     const favList = favoriteElements.map((tdElement) => tdElement.children[0].innerText);
-    sessionStorage.setItem("favorites", JSON.stringify(favList));
+    storeFavorites(favList);
+
+    return favoriteElements;
 }
 
 applyBtn.addEventListener("click", async () => {
     const rates = await getRates(dropdown.value);
     const currencies = Object.keys(rates);
     
-    sessionStorage.setItem("rates", JSON.stringify(rates));
-    storeFavorites();
-    
-    uncheckFav();
-    changeCurrencyOnText(currencies[0]);
+    storeRates(rates);
+    const favoriteElements = getFavorites();
+
+    changeSelectedCurrency(currencies[0]);
     removeTable();
     createFullTable(rates, currencies);
 });
@@ -158,7 +165,7 @@ favToggle.addEventListener("change", (e) => {
     }
 });
 
-const changeCurrencyOnText = (newCurrency) => {
+const changeSelectedCurrency = (newCurrency) => {
     currency.innerText = `Mostrando valores de 1.00 ${newCurrency}`;
 }
 
@@ -185,7 +192,7 @@ const createFavTable = (favorites) => {
 
 const createFullTable = (rates, currencies) => {
     currencies.shift() // first element = selected currency
-    const favorites = JSON.parse(sessionStorage.getItem("favorites"));
+    const favorites = getStoredFavorites();
 
     createTableElement();
     currencies.forEach((currency, index) => {
@@ -195,17 +202,20 @@ const createFullTable = (rates, currencies) => {
         const currentRate = rates[`${currency}`].toFixed(4);
         createTableDataElement(currency, currentRate, favorites);
     });
+    if(favToggle.checked) {
+        displayFavCurrencies();
+    }
 }
 
 window.onload = async () => {
     const rates = await getRates();
-    const currencies = Object.keys(rates);
+    const currencies = getCurrencies(rates);
     const mainCurrency = currencies[0];
-console.log("onload")
-    sessionStorage.setItem("rates", JSON.stringify(rates));
-    sessionStorage.setItem("favorites", JSON.stringify([]));
+
+    storeRates(rates);
+    storeFavorites([]);
     
-    changeCurrencyOnText(mainCurrency);
+    changeSelectedCurrency(mainCurrency);
     setDropDownOptions(currencies);
     createFullTable(rates, currencies);
 }
